@@ -84,7 +84,7 @@ PNG blendImages(PNG firstImage, PNG secondImage)
       resImage(i,j)->blue = (firstImage(i,j)->blue + secondImage(i,j)->blue) / 2;
     }
   }
-    return firstImage;
+  return resImage;
 }
 
 /**
