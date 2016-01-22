@@ -55,7 +55,10 @@ PNG brighten(PNG original, int amount)
     /// You can assume amount is positive.
     for (size_t yi = 0; yi < original.height(); yi++) {
         for (size_t xi = 0; xi < original.width(); xi++) {
-            /// Your code here!
+	  original(xi, yi)->red = (original(xi, yi)->red + amount > 255) ? 255 : original(xi, yi)->red + amount;
+	  original(xi, yi)->green = (original(xi, yi)->green + amount > 255) ? 255 : original(xi, yi)->green + amount;
+	  original(xi, yi)->blue = (original(xi, yi)->blue + amount > 255) ? 255 : original(xi, yi)->blue + amount;
+	  
         }
     }
     return original;
@@ -73,7 +76,14 @@ PNG brighten(PNG original, int amount)
  */
 PNG blendImages(PNG firstImage, PNG secondImage)
 {
-    /// Your code here!
+  PNG resImage(firstImage.width(), firstImage.height());
+  for(size_t i = 0; i < firstImage.width(); ++i){
+    for(size_t j = 0; j < firstImage.height(); ++j){
+      resImage(i,j)->red = (firstImage(i,j)->red + secondImage(i,j)->red) / 2;
+      resImage(i,j)->green = (firstImage(i,j)->green + secondImage(i,j)->green) / 2;
+      resImage(i,j)->blue = (firstImage(i,j)->blue + secondImage(i,j)->blue) / 2;
+    }
+  }
     return firstImage;
 }
 
