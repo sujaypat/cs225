@@ -7,11 +7,11 @@ class RGBAPixel
 {
  public: 
   RGBAPixel();
-  RGBAPixel(unsigned char red, unsigned char green, unsigned char blue);
-  unsigned char red;
-  unsigned char green;
-  unsigned char blue;
-  unsigned char alpha;
+  RGBAPixel(uint8_t red, uint8_t green, uint8_t blue);
+  uint8_t red;
+  uint8_t green;
+  uint8_t blue;
+  uint8_t alpha;
 };
 
 #endif
