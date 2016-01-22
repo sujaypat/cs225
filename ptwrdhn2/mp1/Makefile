@@ -1,14 +1,15 @@
-COMPILER = g++
-COMPILER_FLAGS = -c -g -O0 -Wall -Werror
-LINKER = g++
+CXX = clang++
+CXXFLAGS = -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -Werror -pedantic 
+LINKER = clang++
+LDFLAGS = -std=c++1y -stdlib=libc++ -lpng -lc++abi
 
 mp1 : main.o png.o rgbapixel.o
 	$(LINKER) main.o png.o rgbapixel.o -lpng -o mp1
 main.o : main.cpp png.h rgbapixel.h
-	$(COMPILER) $(COMPILER_FLAGS) main.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
 png.o : png.h
-	$(COMPILER) $(COMPILER_FLAGS) png.cpp
+	$(CXX) $(CXXFLAGS) png.cpp
 rgbapixel.o : rgbapixel.h png.h
-	$(COMPILER) $(COMPILER_FLAGS) rgbapixel.cpp
+	$(CXX) $(CXXFLAGS) rgbapixel.cpp
 clean: 
 	rm -f *.o mp1
