@@ -1,6 +1,6 @@
 #ifndef RGBAPIXEL_H
 #define RGBAPIXEL_H
-
+//using std::uint8_t;
 class RGBAPixel
 {
 	public: 
