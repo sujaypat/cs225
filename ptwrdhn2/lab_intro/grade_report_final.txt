@@ -1,7 +1,8 @@
+Grading r1763 by ptwrdhn2 on 2016-01-22T20:25:07.451456Z
 Monad Autograder
-Testing lab_intro at 2016-01-25 00:19:19
+Testing lab_intro at 2016-01-25 01:57:56
 
-"Rubber duckies are love. Rubber duckies are life. Rubber duckies help you solve all your debugging problems." ~ Jia Wern Lim
+"Computer Science is no more about computers than astronomy is about telescopes." ~ E. Dijkstra
 
 Setting up test environment...
 Compiling...
