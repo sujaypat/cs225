@@ -1,0 +1,21 @@
+Monad Autograder
+Testing lab_intro at 2016-01-25 00:19:19
+
+"Rubber duckies are love. Rubber duckies are life. Rubber duckies help you solve all your debugging problems." ~ Jia Wern Lim
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testBrighten  . [33 pts] - passed
+testCrosshairs  [33 pts] - passed
+testBlendImages [34 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
