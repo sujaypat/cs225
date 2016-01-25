@@ -3,7 +3,6 @@ CXXFLAGS = -std=c++1y -stdlib=libc++ -c -g -O0 -Wall -Wextra -Werror -pedantic
 LD = clang++
 LDFLAGS = -std=c++1y -stdlib=libc++ -lpng -lc++abi
 
-all : mp1
 
 mp1 : main.o png.o rgbapixel.o
 	$(LD) main.o png.o rgbapixel.o $(LDFLAGS) -o mp1
