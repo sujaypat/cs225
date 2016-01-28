@@ -1,14 +1,15 @@
-#IFNDEF IMAGE_H
-#DEFINE IMAGE_H
+#ifndef IMAGE_H
+#define IMAGE_H
+
 #include <cstdint>
 #include <iostream>
-class Image{
+#include "png.h"
+class Image : public PNG{
 
  public:
   void flipleft();
   void adjustbrightness(int r, int g, int b);
   void invertcolors();
-
 
 };
 
