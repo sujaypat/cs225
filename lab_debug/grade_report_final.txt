@@ -1,0 +1,24 @@
+Grading r4724 by ptwrdhn2 committed on Wed Jan 27 21:15:42 CST 2016
+Monad Autograder
+Testing lab_debug at 2016-02-01 00:21:45
+
+"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time." ~ Tom Cargill
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+no_segfaults . . . [20 pts] - passed
+produces_out_png . [10 pts] - passed
+similar_sketch . . [30 pts] - passed
+complete_in_01_png [20 pts] - passed
+complete_in_02_png [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
