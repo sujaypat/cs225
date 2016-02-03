@@ -1,0 +1,26 @@
+Grading r6090 by ptwrdhn2 committed on Sat Jan 30 15:23:31 CST 2016
+Monad Autograder
+Testing mp2.1 at 2016-02-03 00:35:54
+
+"@return A voidean value indicating whether the test was successful." ~ lab_avl
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven  . . [30 pts] - passed
+FlipLeftEven  . . . . [15 pts] - passed
+FlipLeftOdd . . . . . [15 pts] - passed
+AdjustBrightnessEven  [10 pts] - passed
+AdjustBrightnessEven2 [10 pts] - passed
+AdjustBrightnessEven3 [10 pts] - passed
+ImageMakefile . . . . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
