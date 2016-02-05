@@ -37,44 +37,41 @@ const Scene & Scene::operator=(const Scene &source){
 
 
 void Scene::changemaxlayers(int newmax){
-  if (newmax < max){
-      for (int i = newmax; i < max; i++){
-	  if (layers[i] == NULL){
-	      cout<< "invalid new max" << endl;
+  if(newmax > max){
+      Image** temp = new Image*[newmax];
+
+      for(int i = 0; i < max; i++){
+	  temp[i] = layers[i];
+        }
+
+      for(int i = max; i < newmax; i++){
+	  temp[i] = NULL;
+        }
+
+      _clear();
+      max = newmax;
+      layers = temp;
+    }
+
+  else if(newmax < max){
+      for(int i = newmax; i < max; i++){
+	  if(layers[i] != NULL){
+	      cout << "invalid newmax" << endl;
 	      return;
             }
         }
+
+      Image** temp = new Image*[newmax];
+
+      for(int i = 0; i < newmax; i++){
+	  temp[i] = layers[i];
+        }
+
+      _clear();
+      max = newmax;
+      layers = temp;
     }
-
-
-  Image **nlayers = new Image *[newmax];
-  int *nxvals = new int[newmax];
-  int *nyvals = new int[newmax];
-
-
-  for (int i =0; i < newmax; i++){
-      nlayers[i] = NULL;
-      nxvals[i] = 0;
-      nyvals[i] = 0;
-  }
-
-  int smaller = (newmax<max)?newmax:max;
-
-  for (int i = 0; i< smaller;i++){
-      *nlayers[i] = *layers[i];
-      nxvals[i] = xvals[i];
-      nyvals[i] = yvals[i];
-  }
-
-  _clear();
-
-
-  layers = nlayers;
-  xvals = nxvals;
-  yvals = nyvals;
-
 }
-
 
 void Scene::addpicture(const char *FileName, int index, int x, int y){
 
