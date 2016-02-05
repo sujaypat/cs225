@@ -61,7 +61,7 @@ void Room::print()
 void Room::clear()
 {
     if (letters != NULL)
-        delete letters;
+        delete [] letters;
 }
 
 void Room::copy(const Room& other)
