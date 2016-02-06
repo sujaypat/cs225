@@ -37,40 +37,52 @@ const Scene & Scene::operator=(const Scene &source){
 
 
 void Scene::changemaxlayers(int newmax){
-  if(newmax > max){
-      Image** temp = new Image*[newmax];
 
-      for(int i = 0; i < max; i++){
-	  temp[i] = layers[i];
+  Image ** newlayers = new Image*[newmax];
+  int *new_x=new int[newmax];
+  int *new_y=new int[newmax];
+  if(newlayers!= NULL && newmax>max && new_x!=NULL && new_y!=NULL)
+    {
+      for(int i=0; i<max; i++)
+	newlayers[i]= layers[i];
+        
+      for(int i=max; i<newmax; i++)
+        newlayers[i]=NULL;
+        
+       
+      for(int i=0; i<max; i++)
+        {
+	  new_x[i]=xvals[i];
+	  new_y[i]=yvals[i];
         }
-
-      for(int i = max; i < newmax; i++){
-	  temp[i] = NULL;
+      for(int i=max; i<newmax; i++)
+        {
+	  new_x[i]=0;
+	  new_y[i]=0;
         }
-
-      _clear();
-      max = newmax;
-      layers = temp;
+      max=newmax;
     }
+  else if(newmax==max)
+    return;
+  else
+    cout <<"invalid newmax" <<endl;
+        
+  delete[] layers;
+  layers=newlayers;
+  newlayers=NULL;
+  delete[] newlayers;
 
-  else if(newmax < max){
-      for(int i = newmax; i < max; i++){
-	  if(layers[i] != NULL){
-	      cout << "invalid newmax" << endl;
-	      return;
-            }
-        }
+  delete[] xvals;
+  xvals=new_x;
+  new_x=NULL;
+  delete[] new_x;
 
-      Image** temp = new Image*[newmax];
+  delete[] yvals;
+  yvals=new_y;
+  new_y=NULL;
+  delete[] new_y;
 
-      for(int i = 0; i < newmax; i++){
-	  temp[i] = layers[i];
-        }
 
-      _clear();
-      max = newmax;
-      layers = temp;
-    }
 }
 
 void Scene::addpicture(const char *FileName, int index, int x, int y){
@@ -206,4 +218,7 @@ void Scene::_clear(){
   delete [] layers;
   delete [] xvals;
   delete [] yvals;
+  layers = NULL;
+  xvals = NULL;
+  yvals = NULL;
 }
