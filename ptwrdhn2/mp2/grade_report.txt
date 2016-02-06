@@ -1,8 +1,8 @@
-Grading r7966 by tolar2 committed on Thu Feb  4 00:14:24 CST 2016
+Grading r8746 by ptwrdhn2 committed on Fri Feb  5 11:00:03 CST 2016
 Monad Autograder
-Testing mp2 at 2016-02-05 00:17:27
+Testing mp2 at 2016-02-06 00:17:59
 
-"I'm not saying he's evil incarnate based on that fact alone; I've always known it." ~ REDACTED
+"Recursion is magic. " ~ Prof. Jeff Erickson | "Recursion is NOT magic." ~ Prof. Craig Zilles 
 
 Setting up test environment...
 Compiling...
@@ -24,8 +24,8 @@ AddPictureInvalidIndex . . . . . . [2 pts] - passed
 ImageAssignmentOperator  . . . . . [2 pts] - passed
 SceneGetPictureInvalidIndex  . . . [2 pts] - passed
 SceneChangeMaxLayersLarger . . . . [2 pts] - FAILED
-SceneChangeMaxLayersSmaller (asan) [1 pts] - passed
-SceneChangeMaxLayersInvalidChange  [2 pts] - FAILED
+SceneChangeMaxLayersSmaller (asan) [1 pts] - FAILED
+SceneChangeMaxLayersInvalidChange  [2 pts] - passed
 SceneCopyCtor  . . . . . . . . . . [2 pts] - passed
 SceneCopyCtor2 . . . . . . . . . . [2 pts] - passed
 SceneAssignmentOperator  . . . . . [2 pts] - passed
@@ -50,5 +50,5 @@ SceneMakefile  . . . . . . . . . . [5 pts] - passed
 
 Total score...
 ================================================================
-TOTAL SCORE: 91
+TOTAL SCORE: 92
 
