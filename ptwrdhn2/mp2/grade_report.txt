@@ -1,8 +1,8 @@
-Grading r8746 by ptwrdhn2 committed on Fri Feb  5 11:00:03 CST 2016
+Grading r9146 by ptwrdhn2 committed on Sat Feb  6 10:11:13 CST 2016
 Monad Autograder
-Testing mp2 at 2016-02-06 00:17:59
+Testing mp2 at 2016-02-07 00:13:59
 
-"Recursion is magic. " ~ Prof. Jeff Erickson | "Recursion is NOT magic." ~ Prof. Craig Zilles 
+"If you don't hand in the next homework, you might miss some points." ~ Prof. Jiawei Han
 
 Setting up test environment...
 Compiling...
@@ -23,9 +23,9 @@ AddPictureValidIndex . . . . . . . [2 pts] - passed
 AddPictureInvalidIndex . . . . . . [2 pts] - passed
 ImageAssignmentOperator  . . . . . [2 pts] - passed
 SceneGetPictureInvalidIndex  . . . [2 pts] - passed
-SceneChangeMaxLayersLarger . . . . [2 pts] - FAILED
+SceneChangeMaxLayersLarger . . . . [2 pts] - passed
 SceneChangeMaxLayersSmaller (asan) [1 pts] - FAILED
-SceneChangeMaxLayersInvalidChange  [2 pts] - passed
+SceneChangeMaxLayersInvalidChange  [2 pts] - FAILED
 SceneCopyCtor  . . . . . . . . . . [2 pts] - passed
 SceneCopyCtor2 . . . . . . . . . . [2 pts] - passed
 SceneAssignmentOperator  . . . . . [2 pts] - passed
@@ -44,11 +44,11 @@ SceneTranslateInvalid  . . . . . . [2 pts] - passed
 SceneTranslateInvalid2 . . . . . . [1 pts] - passed
 SceneDeletePictureInvalid  . . . . [2 pts] - passed
 Valgrind2 (asan) . . . . . . . . . [5 pts] - passed
-Valgrind3 (asan) . . . . . . . . . [5 pts] - FAILED
+Valgrind3 (asan) . . . . . . . . . [5 pts] - passed
 SceneMakefile  . . . . . . . . . . [5 pts] - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 92
+TOTAL SCORE: 97
 
