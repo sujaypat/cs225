@@ -81,7 +81,8 @@ void Scene::changemaxlayers(int newmax){
   yvals=new_y;
   new_y=NULL;
   delete[] new_y;
-
+  
+  _clear();
 
 }
 
