@@ -1,8 +1,8 @@
-Grading r9513 by tolar2 committed on Sun Feb  7 00:16:34 CST 2016
+Grading r10311 by ptwrdhn2 committed on Mon Feb  8 11:02:31 CST 2016
 Monad Autograder
-Testing mp2 at 2016-02-08 00:31:36
+Testing mp2 at 2016-02-09 00:20:31
 
-"It'll work, the stack's just not big enough." ~ Eric Rosenberg
+"There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone." ~ Bjarne Stroustrup
 
 Setting up test environment...
 Compiling...
@@ -23,7 +23,7 @@ AddPictureValidIndex . . . . . . . [2 pts] - passed
 AddPictureInvalidIndex . . . . . . [2 pts] - passed
 ImageAssignmentOperator  . . . . . [2 pts] - passed
 SceneGetPictureInvalidIndex  . . . [2 pts] - passed
-SceneChangeMaxLayersLarger . . . . [2 pts] - passed
+SceneChangeMaxLayersLarger . . . . [2 pts] - FAILED
 SceneChangeMaxLayersSmaller (asan) [1 pts] - FAILED
 SceneChangeMaxLayersInvalidChange  [2 pts] - FAILED
 SceneCopyCtor  . . . . . . . . . . [2 pts] - passed
@@ -44,11 +44,11 @@ SceneTranslateInvalid  . . . . . . [2 pts] - passed
 SceneTranslateInvalid2 . . . . . . [1 pts] - passed
 SceneDeletePictureInvalid  . . . . [2 pts] - passed
 Valgrind2 (asan) . . . . . . . . . [5 pts] - passed
-Valgrind3 (asan) . . . . . . . . . [5 pts] - passed
+Valgrind3 (asan) . . . . . . . . . [5 pts] - FAILED
 SceneMakefile  . . . . . . . . . . [5 pts] - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 97
+TOTAL SCORE: 90
 
