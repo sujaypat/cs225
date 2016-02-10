@@ -15,9 +15,8 @@
  * memory does not leak on destruction of a list.
  */
 template <class T>
-List<T>::~List()
-{
-    /// @todo Graded in MP3.1
+List<T>::~List(){
+  clear();
 }
 
 /**
@@ -25,8 +24,13 @@ List<T>::~List()
  * List class.
  */
 template <class T>
-void List<T>::clear()
-{
+void List<T>::clear(){
+  
+  while(head){
+    tail = head->next;
+    delete head;
+    head = tail;
+  }
     /// @todo Graded in MP3.1
 }
 
@@ -37,10 +41,22 @@ void List<T>::clear()
  * @param ndata The data to be inserted.
  */
 template <class T>
-void List<T>::insertFront(T const& ndata)
-{
+void List<T>::insertFront(T const& ndata){
     /// @todo Graded in MP3.1
+  ListNode *newFront = new ListNode(ndata);
+  if(head != NULL){
+    newFront->next = head;
+    head->prev = newFront;
+    head = newFront;
+    length++;
+  }
+  else{
+    head = newFront;
+    tail = newFront;
+    length++;
+
 }
+
 
 /**
  * Inserts a new node at the back of the List.
@@ -49,8 +65,19 @@ void List<T>::insertFront(T const& ndata)
  * @param ndata The data to be inserted.
  */
 template <class T>
-void List<T>::insertBack(const T& ndata)
-{
+void List<T>::insertBack(const T& ndata){
+  ListNode *newBack = new ListNode(ndata);
+  if(tail != NULL){
+    tail->next = newBack;
+    newBack->prev = tail;
+    tail = newBack;
+    length++;
+  }
+  else{
+
+
+
+  }
     /// @todo Graded in MP3.1
 }
 

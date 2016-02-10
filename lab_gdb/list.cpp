@@ -18,8 +18,7 @@
  * memory does not leak on destruction of a list.
  */
 template <class T>
-List<T>::~List()
-{
+List<T>::~List(){
     clear();
 }
 
@@ -28,8 +27,21 @@ List<T>::~List()
  * List class.
  */
 template <class T>
-void List<T>::clear()
-{
+void List<T>::clear(){
+
+  ListNode * del = this->head;
+  ListNode * next = NULL;
+  while(del!=NULL){
+    next = del->next;
+    delete del;
+    del = next;
+    if(del->next == NULL){
+      delete del;
+      head=NULL;
+      del=NULL;
+      length = 0;
+    }
+  }
     // @todo Graded in lab_gdb
     // Write this function based on mp3
 }
@@ -41,8 +53,21 @@ void List<T>::clear()
  * @param ndata The data to be inserted.
  */
 template <class T>
-void List<T>::insertFront(T const& ndata)
-{
+void List<T>::insertFront(T const& ndata){
+
+  ListNode *newFront = new ListNode(ndata);
+  if(head != NULL){
+    newFront->next = head;
+    head->prev = newFront;
+    head = newFront;
+    length++;
+  }
+  else{
+    newFront->next = head;
+    head = newFront;
+  }
+
+
     // @todo Graded in lab_gdb
     // Write this function based on mp3
 }
@@ -54,14 +79,14 @@ void List<T>::insertFront(T const& ndata)
  * @param ndata The data to be inserted.
  */
 template <class T>
-void List<T>::insertBack(const T& ndata)
-{
+void List<T>::insertBack(const T& ndata){
     // @todo Graded in lab_gdb
     // NOTE: Do not use this implementation for MP3!
     ListNode* temp = head;
 
     if (temp == NULL) {
         head = new ListNode(ndata);
+	length++;
     } else {
         while (temp->next != NULL)
             temp = temp->next;
