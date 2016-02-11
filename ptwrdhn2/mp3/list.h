@@ -27,16 +27,14 @@ using namespace std;
  * and are encouraged to add to it.
  */
 template <class T>
-class List
-{
+class List{
   private:
     /**
      * The ListNode class is private to the List class via the principle of
      * encapsulation---the end user does not need to know our node-based
      * implementation details.
      */
-    class ListNode
-    {
+    class ListNode{
       public:
         /**
          * Default ListNode constructor.
