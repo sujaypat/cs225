@@ -1,8 +1,8 @@
-Grading r16506 by tolar2 committed on Sat Feb 20 00:35:03 CST 2016
+Grading r16833 by tolar2 committed on Sun Feb 21 00:33:02 CST 2016
 Monad Autograder
-Testing mp3 at 2016-02-21 00:24:21
+Testing mp3 at 2016-02-22 00:52:54
 
-"I did respond to your email, but I might have forgotten to hit send." ~ Cinda Heeren
+"If at first you don't succeed, that's one data point." ~ Randall Munroe
 
 Setting up test environment...
 Compiling...
