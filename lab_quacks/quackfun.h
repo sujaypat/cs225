@@ -15,8 +15,7 @@ using std::queue;
 /**
  * Namespace to contain the stack and queue functions for this lab.
  */
-namespace QuackFun
-{
+namespace QuackFun{
     template <typename T>
     T sum(stack<T>& s);
 
