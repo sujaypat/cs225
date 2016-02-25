@@ -1,8 +1,8 @@
-Grading r17956 by tolar2 committed on Tue Feb 23 00:34:32 CST 2016
+Grading r18219 by tolar2 committed on Wed Feb 24 00:39:16 CST 2016
 Monad Autograder
-Testing mp3 at 2016-02-24 00:30:27
+Testing mp3 at 2016-02-25 00:30:38
 
-"(reading a password) Uppercase 0... [...] Lowercase 0..." ~ Sean Massung
+"There's not enough wiggleability, you know." ~ Eric Shaffer
 
 Setting up test environment...
 Compiling...
