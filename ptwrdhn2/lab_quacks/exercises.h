@@ -9,8 +9,7 @@
 /**
  * Namespace to contain the recursion exercise code.
  */
-namespace RecursionExercises
-{
+namespace RecursionExercises{
 
     int sumDigits(int n);
 
