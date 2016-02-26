@@ -106,35 +106,34 @@ void List<T>::reverse(){
 */
 template <class T>
 void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint){
-	if(startPoint == endPoint)
-	return;
+	if(startPoint == endPoint) return;
 
-	ListNode* temp = startPoint;
+	ListNode * temp = startPoint;
 	ListNode * temp2 = startPoint;
 	ListNode * temp3 = endPoint->next;
 
 	while (temp != temp3){
-		temp2 = temp->prev;
-		temp->prev = temp->next;
-		temp->next = temp2;
-		temp = temp->prev;
+		temp2 = temp-> prev;
+		temp-> prev = temp-> next;
+		temp-> next = temp2;
+		temp = temp-> prev;
 	}
 
-	temp2 = endPoint->prev;
+	temp2 = endPoint-> prev;
 
-	if (startPoint->next != NULL){
-		endPoint ->prev = startPoint->next;
-		startPoint->next->next = endPoint;
+	if (startPoint-> next != NULL){
+		endPoint-> prev = startPoint->next;
+		startPoint-> next-> next = endPoint;
 	}
 	else
-	endPoint ->prev = NULL;
+	endPoint-> prev = NULL;
 
 	if (temp2 != NULL){
-		startPoint->next = temp2;
-		temp2->prev = startPoint;
+		startPoint-> next = temp2;
+		temp2-> prev = startPoint;
 	}
 	else
-	startPoint ->next = NULL;
+	startPoint-> next = NULL;
 
 	temp = startPoint;
 	startPoint = endPoint;
@@ -153,38 +152,45 @@ void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint){
 template <class T>
 void List<T>::reverseNth(int n){
 	/// @todo Graded in MP3.1
-	if (length <=1 || n == 1)
+	if (length <= 1 || n == 1 || empty())
 	return;
-	//just do normal reverse if block size is the full length
-	if (n == length)
-	reverse();
+	if (n == length){
+		reverse();
+		return;
+	}
 
 	//setup node pointers
 	ListNode *temp = head;
 	ListNode *new_head = head;
-	ListNode *new_tail = NULL;
+	ListNode *new_tail = head;
 
 	//store block size for counter
 	int count = n;
 
 	while(temp != NULL){
-		if (count==0){
+		if (count == 0){
 			if (new_head == head)
-			head = new_tail;
-			reverse(new_head,new_tail);
+				head = new_tail;
+			reverse(new_head, new_tail);
 			count = n;
 			new_head = temp;
 			new_tail = temp;
 		}
 
-		if (temp->next == NULL){
-			reverse(new_head,temp);
+		if (temp -> next == NULL){
+			reverse(new_head, temp);
 		}
 
 		new_tail = temp;
 		temp = temp->next;
 		count--;
 	}
+	// while(){
+	//
+	// }
+	tail = new_tail;
+	head = new_head;
+
 }
 
 
@@ -209,7 +215,7 @@ void List<T>::waterfall(){
 	ListNode * temp2 = head;
 
 	while (temp->next != tail && temp != tail && temp != NULL){
-		while (count >0){
+		while (count > 0){
 			temp2 = temp;
 			temp = temp ->next;
 			count--;
@@ -293,13 +299,17 @@ List<T> List<T>::split(int splitPoint){
 template <class T>
 typename List<T>::ListNode* List<T>::split(ListNode* start, int splitPoint){
 	/// @todo Graded in MP3.2
+	if(start == NULL) return NULL;
 	ListNode * temp = start;
 	int count = splitPoint;
 	while (count--){
+		if(temp == tail) break;
 		temp = temp->next;
 	}
-	if (temp->prev != NULL)
-	temp->prev->next = NULL;
+	if (temp->prev != NULL){
+		temp->prev->next = NULL;
+		temp->prev = NULL;
+	}
 	return temp; // change me!
 }
 
@@ -386,11 +396,11 @@ typename List<T>::ListNode* List<T>::merge(ListNode* first, ListNode* second){
 template <class T>
 void List<T>::sort(){
 	if (empty())
-	return;
-	head = mergesort(head, length);
-	tail = head;
-	while (tail->next != NULL)
-	tail = tail->next;
+        return;
+    head = mergesort(head, length);
+    tail = head;
+    while (tail->next != NULL)
+        tail = tail->next;
 }
 
 /**
@@ -404,12 +414,11 @@ void List<T>::sort(){
 */
 template <class T>
 typename List<T>::ListNode* List<T>::mergesort(ListNode* start, int chainLength){
-	if(chainLength == 1) return start;
-	int mid = chainLength/2;
-	ListNode *hi = split(start, mid);
-	ListNode *lo = start;
-	hi = mergesort(hi, chainLength - mid);
-	start = mergesort(lo, mid);
-	/// @todo Graded in MP3.2
-	return merge(hi, start); // change me!
+	if (chainLength == 1) return start;
+    int mid = chainLength / 2;
+    ListNode *right = split(start, mid);
+	// right->prev->next = NULL;
+    right = mergesort(right, (chainLength + 1) / 2);
+    start = mergesort(start, mid);
+    return merge(start, right); // change me!
 }
