@@ -61,7 +61,7 @@ void testInserts()
     cout << "Start by uncommenting lines " << (__LINE__ + 3) << " through " << (__LINE__ + 26) << "." << endl;
 
     /* uncomment the below */
-    
+
     cout << "[main]: " << __func__ << "()" << endl;
     List<int> list;
 
@@ -89,6 +89,37 @@ void testInserts()
 
 void testReverse()
 {
+
+	List<int> listq;
+
+    // test insertFront
+    for (size_t i = 1; i <= 20; i++)
+        listq.insertFront(i);
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	return;
+
     cout << "[main]: " << __func__ << "()" << endl;
     PNG in("in_02.png");
 
@@ -103,6 +134,25 @@ void testReverse()
 
 void testReverseNth()
 {
+
+	List<int> listq;
+
+    // test insertFront
+    for (size_t i = 1; i <= 37; i++)
+        listq.insertFront(i);
+
+	cout<< listq << endl;
+
+	listq.reverseNth(37);
+
+	cout<< listq << endl;
+
+	listq.reverse();
+
+	cout<< listq << endl;
+
+	return;
+
     cout << "[main]: " << __func__ << "()" << endl;
     PNG in("in_03.png");
 
@@ -241,6 +291,27 @@ void testSort()
     cout << "[main]: " << __func__ << "()" << endl;
 
     srand(225);
+	List<int> listfuck;
+
+    // test insertFront
+    for (size_t i = 1; i <= 16; i++){
+        listfuck.insertFront(i);
+		listfuck.insertBack(i-1);
+	}
+	cout << listfuck << endl;
+
+	listfuck.sort();
+	// listfuck.reverseNth(2);
+	//
+	// cout<< listfuck << endl;
+	//
+	// listfuck.reverse();
+
+	cout<< listfuck << endl;
+	// listfuck.reverse();
+	// cout<< listfuck << endl;
+
+	return;
 
     // read in image to be shuffled
     BlockPNG b;
