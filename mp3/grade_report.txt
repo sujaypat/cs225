@@ -1,8 +1,8 @@
-Grading r18219 by tolar2 committed on Wed Feb 24 00:39:16 CST 2016
+Grading r19365 by ptwrdhn2 committed on Thu Feb 25 21:46:55 CST 2016
 Monad Autograder
-Testing mp3 at 2016-02-25 00:30:38
+Testing mp3 at 2016-02-26 00:27:09
 
-"There's not enough wiggleability, you know." ~ Eric Shaffer
+"All that is gold does not glitter, / Not all those who wander are lost;" ~ Bilbo Baggins
 
 Setting up test environment...
 Compiling...
@@ -24,14 +24,14 @@ testReverse37_backward . . . . . [1 pts]  - passed
 testReverseEmpty (asan)  . . . . [1 pts]  - passed
 testReverse20_memory (asan)  . . [1 pts]  - passed
 testReverseNth20_2_size  . . . . [1 pts]  - passed
-testReverseNth20_2_forward . . . [1 pts]  - passed
-testReverseNth20_2_backward  . . [1 pts]  - FAILED
+testReverseNth20_2_forward . . . [1 pts]  - FAILED
+testReverseNth20_2_backward  . . [1 pts]  - passed
 testReverseNth37_4_size  . . . . [1 pts]  - passed
-testReverseNth37_4_forward . . . [1 pts]  - passed
+testReverseNth37_4_forward . . . [1 pts]  - FAILED
 testReverseNth37_4_backward  . . [1 pts]  - passed
-testReverseNth37_37  . . . . . . [1 pts]  - FAILED
-testReverseNth37_4_memory (asan) [1 pts]  - passed
-testReverseNthEmpty (asan) . . . [1 pts]  - FAILED
+testReverseNth37_37  . . . . . . [1 pts]  - passed
+testReverseNth37_4_memory (asan) [1 pts]  - FAILED
+testReverseNthEmpty (asan) . . . [1 pts]  - passed
 testWaterfall4_size  . . . . . . [1 pts]  - passed
 testWaterfall4_forward . . . . . [1 pts]  - passed
 testWaterfall4_backward  . . . . [2 pts]  - passed
@@ -56,22 +56,22 @@ testMerge_backward . . . . . . . [1 pts]  - passed
 testMerge_mem (asan) . . . . . . [3 pts]  - passed
 testSort16p_s  . . . . . . . . . [1 pts]  - passed
 testSort16p_f  . . . . . . . . . [2 pts]  - passed
-testSort16p_b  . . . . . . . . . [2 pts]  - FAILED
+testSort16p_b  . . . . . . . . . [2 pts]  - passed
 testSort20p_s  . . . . . . . . . [1 pts]  - passed
 testSort20p_f  . . . . . . . . . [2 pts]  - passed
-testSort20p_b  . . . . . . . . . [2 pts]  - FAILED
+testSort20p_b  . . . . . . . . . [2 pts]  - passed
 testSort27p_s  . . . . . . . . . [1 pts]  - passed
 testSort27p_f  . . . . . . . . . [2 pts]  - passed
-testSort27p_b  . . . . . . . . . [2 pts]  - FAILED
+testSort27p_b  . . . . . . . . . [2 pts]  - passed
 testSortEmpty  . . . . . . . . . [5 pts]  - passed
 testSort259p_s . . . . . . . . . [1 pts]  - passed
 testSort259p_f . . . . . . . . . [2 pts]  - passed
-testSort259p_b . . . . . . . . . [2 pts]  - FAILED
-testSortMemLeak (asan) . . . . . [5 pts]  - FAILED
+testSort259p_b . . . . . . . . . [2 pts]  - passed
+testSortMemLeak (asan) . . . . . [5 pts]  - passed
 testSortNlogN  . . . . . . . . . [10 pts] - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 84
+TOTAL SCORE: 97
 
