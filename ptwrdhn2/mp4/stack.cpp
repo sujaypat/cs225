@@ -18,11 +18,11 @@
  * @param newItem The object to be added to the Stack.
  */
 template<class T>
-void Stack<T>::push(T const & newItem)
-{
+void Stack<T>::push(T const & newItem){
     /**
      * @todo Your code here!
      */
+	 myStack.push_front(newItem);
 }
 
 /**
@@ -35,12 +35,14 @@ void Stack<T>::push(T const & newItem)
  * @return The element that used to be at the top of the Stack.
  */
 template <class T>
-T Stack<T>::pop()
-{
+T Stack<T>::pop(){
     /**
      * @todo Your code here! You will have to replace the following line.
      */
-    return T();
+    // return T();
+	T front = myStack.front();
+	myStack.pop_front();
+	return front;
 }
 
 /**
@@ -49,12 +51,12 @@ T Stack<T>::pop()
  * @see OrderingStructure::add()
  */
 template <class T>
-void Stack<T>::add(const T& theItem)
-{
+void Stack<T>::add(const T& theItem){
     /**
      * @todo Your code here! Hint: this should call another Stack function
      *  to add the element to the Stack.
      */
+	 this->push(theItem);
 }
 
 /**
@@ -63,14 +65,14 @@ void Stack<T>::add(const T& theItem)
  * @see OrderingStructure::remove()
  */
 template <class T>
-T Stack<T>::remove()
-{
+T Stack<T>::remove(){
     /**
      * @todo Your code here! Hint: this should call another Stack function
      *  to remove an element from the Stack and return it. You will need to
      *  replace the following line.
      */
-    return T();
+    // return T();
+	return this->pop();
 }
 
 /**
@@ -84,12 +86,9 @@ T Stack<T>::remove()
  * @return The element at the top of the Stack.
  */
 template <class T>
-T Stack<T>::peek()
-{
-    /**
-     * @todo Your code here! You will need to replace the following line.
-     */
-    return T();
+T Stack<T>::peek(){
+    return myStack.front();
+    // return T();
 }
 
 /**
@@ -101,10 +100,9 @@ T Stack<T>::peek()
  * @return Whether or not the stack is empty (bool).
  */
 template <class T>
-bool Stack<T>::isEmpty() const
-{
+bool Stack<T>::isEmpty() const{
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return true;
+    return myStack.size() == 0;
 }

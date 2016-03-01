@@ -12,11 +12,11 @@
  * @param newItem object to be added to the Queue.
  */
 template <class T>
-void Queue<T>::enqueue(T const& newItem)
-{
+void Queue<T>::enqueue(T const& newItem){
     /**
      * @todo Your code here!
      */
+	 inStack.add(newItem);
 }
 
 /**
@@ -26,12 +26,19 @@ void Queue<T>::enqueue(T const& newItem)
  * @return The item that used to be at the front of the Queue.
  */
 template <class T>
-T Queue<T>::dequeue()
-{
+T Queue<T>::dequeue(){
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return T();
+    // return T();
+	// return inStack.pop();
+	if(outStack.isEmpty()){
+	    while(!inStack.isEmpty())
+	        outStack.add(inStack.remove());
+    }
+    T returnVal = outStack.peek();
+    outStack.remove();
+    return returnVal;
 }
 
 /**
@@ -40,12 +47,12 @@ T Queue<T>::dequeue()
  * @see OrderingStructure::add()
  */
 template <class T>
-void Queue<T>::add(const T& theItem)
-{
+void Queue<T>::add(const T& theItem){
     /**
      * @todo Your code here! Hint: this function should call a Queue
      *  function to add the element to the Queue.
      */
+	this->enqueue(theItem);
 }
 
 /**
@@ -54,14 +61,14 @@ void Queue<T>::add(const T& theItem)
  * @see OrderingStructure::remove()
  */
 template <class T>
-T Queue<T>::remove()
-{
+T Queue<T>::remove(){
     /**
      * @todo Your code here! Hint: this function should call a Queue
      *  function to remove an element from the Queue and return it. You will
      *  need to replace the following line.
      */
-    return T();
+    // return T();
+	return this->dequeue();
 }
 
 /**
@@ -71,12 +78,17 @@ T Queue<T>::remove()
  * @return The item at the front of the queue.
  */
 template <class T>
-T Queue<T>::peek()
-{
+T Queue<T>::peek(){
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return T();
+    // return T();
+	if(outStack.isEmpty()){
+    	while(!inStack.isEmpty())
+        	outStack.add(inStack.remove());
+    }
+    T returnVal = outStack.peek();
+    return returnVal;
 }
 
 /**
@@ -85,10 +97,10 @@ T Queue<T>::peek()
  * @return bool which is true if the Queue is empty, false otherwise.
  */
 template <class T>
-bool Queue<T>::isEmpty() const
-{
+bool Queue<T>::isEmpty() const{
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-    return true;
+    // return true;
+	return (inStack.isEmpty()&&outStack.isEmpty());
 }

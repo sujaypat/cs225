@@ -23,8 +23,7 @@
  * @author Chase Geigle
  * @date Fall 2012
  */
-namespace filler
-{
+namespace filler{
     /**
      * dfs namespace: specifies a set of filler functions for doing fills
      * on images employing a depth-first-search approach.
@@ -36,8 +35,7 @@ namespace filler
      * @author Chase Geigle
      * @date Fall 2012
      */
-    namespace dfs
-    {
+    namespace dfs{
         /**
          * Performs a flood fill on the given image using a solid color,
          * employing a depth-first-search approach.
@@ -138,8 +136,7 @@ namespace filler
      * @author Chase Geigle
      * @date Fall 2012
      */
-    namespace bfs
-    {
+    namespace bfs{
         /**
          * Performs a flood fill on the given image using a solid color,
          * employing a breadth-first-search approach.
