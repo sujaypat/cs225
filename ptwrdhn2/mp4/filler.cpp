@@ -24,8 +24,8 @@ animation filler::dfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor, int
 	* @todo Your code here! You should replace the following line with a
 	* correct call to fill with the correct colorPicker parameter.
 	*/
-	gridColorPicker fillColor(gridColor, gridSpacing);
-	return filler::fill<Stack>(img, x, y, fillColor, tolerance, frameFreq);
+	gridColorPicker fillGrid(gridColor, gridSpacing);
+	return filler::fill<Stack>(img, x, y, fillGrid, tolerance, frameFreq);
 	// return animation();
 }
 
@@ -34,8 +34,8 @@ animation filler::dfs::fillGradient(PNG& img, int x, int y, RGBAPixel fadeColor1
 	* @todo Your code here! You should replace the following line with a
 	* correct call to fill with the correct colorPicker parameter.
 	*/
-	gradientColorPicker fillColor(fadeColor1, fadeColor2, radius, x, y);
-	return filler::fill<Stack>(img, x, y, fillColor, tolerance, frameFreq);
+	gradientColorPicker fillGradient(fadeColor1, fadeColor2, radius, x, y);
+	return filler::fill<Stack>(img, x, y, fillGradient, tolerance, frameFreq);
 	// return animation();
 }
 
@@ -65,8 +65,8 @@ animation filler::bfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor, int
 	* @todo Your code here! You should replace the following line with a
 	* correct call to fill with the correct colorPicker parameter.
 	*/
-	gridColorPicker fillColor(gridColor, gridSpacing);
-	return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq);
+	gridColorPicker fillGrid(gridColor, gridSpacing);
+	return filler::fill<Queue>(img, x, y, fillGrid, tolerance, frameFreq);
 	// return animation();
 }
 
@@ -75,8 +75,8 @@ animation filler::bfs::fillGradient(PNG& img, int x, int y, RGBAPixel fadeColor1
 	* @todo Your code here! You should replace the following line with a
 	* correct call to fill with the correct colorPicker parameter.
 	*/
-	gradientColorPicker fillColor(fadeColor1, fadeColor2, radius, x, y);
-	return filler::fill<Queue>(img, x, y, fillColor, tolerance, frameFreq);
+	gradientColorPicker fillGradient(fadeColor1, fadeColor2, radius, x, y);
+	return filler::fill<Queue>(img, x, y, fillGradient, tolerance, frameFreq);
 
 	// return animation();
 }
@@ -146,111 +146,75 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor, int toler
 	*        have been checked. So if frameFreq is set to 1, a pixel should
 	*        be filled every frame.
 	*/
-	OrderingStructure<RGBAPixel> pixels;
-	OrderingStructure<int> xcoords;
-	OrderingStructure<int> ycoords;
-	int processed[img.width()][img.height()];
-	for (int i = 0; i < img.width(); i++){
-		for (int j = 0; j <img.height(); j++){
-			processed[i][j] = false;
-		}
+
+	OrderingStructure<RGBAPixel> sq;
+	OrderingStructure<int> Xcoords;
+	OrderingStructure<int> Ycoords;
+	int** processed = new int *[img.width()];
+
+	for(size_t i = 0; i < img.width(); i++){
+		processed[i] = new int[img.height()];
+		for(size_t j = 0; j < img.height(); j++)
+			processed[i][j] = 0;
 	}
-	animation myAnim;
-	int frameCount = 0;
 
-	RGBAPixel origPixel = *(img(x,y));
-	int origRed = origPixel.red;
-	int origGreen = origPixel.green;
-	int origBlue = origPixel.blue;
+	int count = 0; //count when to add new frame
+	animation res; //animation to return
 
-	/*
-	cout<<"[Original]: "<<endl;
-	cout<<"     R: "<<origRed<<endl;
-	cout<<"     G: "<<origGreen<<endl;
-	cout<<"     B: "<<origBlue<<endl;
-	cout<<"----------------"<<endl;
-	*/
+	RGBAPixel starting = (*img(x,y));
+	sq.add(starting);
+	Xcoords.add(x);
+	Ycoords.add(y);
 
-	//add first point
-	pixels.add(*img(x,y));
-	xcoords.add(x);
-	ycoords.add(y);
+	while(!sq.isEmpty()){
+		RGBAPixel pixel = sq.remove();
+		int xCoord = Xcoords.remove();
+		int yCoord = Ycoords.remove();
 
-	while (!pixels.isEmpty()){
-		//remove one point in the structure
-		RGBAPixel currPixel = pixels.remove();
+		int originRed = starting.red, pixelRed = pixel.red,
+			originBlue = starting.blue, pixelBlue = pixel.blue,
+			originGreen = starting.green, pixelGreen = pixel.green;
 
-		int currRed = currPixel.red;
-		int currGreen = currPixel.green;
-		int currBlue = currPixel.blue;
-		int currX = xcoords.remove();
-		int currY = ycoords.remove();
+		int toleranceValue = pow((originRed - pixelRed), 2) +
+			pow((originBlue - pixelBlue), 2) +
+			pow((originGreen - pixelGreen), 2);
 
-		/*
-		cout<<"[Current]  :"<<endl;
-		cout<<"|  (x,y)   |"<<"("<<currX<<","<<currY<<")"<<endl;
-		cout<<"| processed|"<<processed[currX][currY]<<endl;
-		cout<<"============"<<endl;
-		*/
+		if(processed[xCoord][yCoord] == 0 && toleranceValue <= tolerance){
 
-		//compute min
-		int min = pow(origRed-currRed,2)+pow(origGreen-currGreen,2)+pow(origBlue-currBlue,2);
+			processed[xCoord][yCoord] = 1;
+			count++;
+			*img(xCoord,yCoord) = fillColor(xCoord,yCoord);
 
-		//compute if min is within tolerance
-		bool inTolDis = min <= tolerance;
-
-		//process a currPixel if it's not processed yet and it's within tolerance
-		if (inTolDis && !processed[currX][currY]){
-			//mark it processed
-			processed[currX][currY] = true;
-			frameCount++;
-
-			//change color
-			*(img(currX,currY)) = fillColor(currX,currY);
-
-			/*
-			cout<<currX<<endl;
-			cout<<currY<<endl;
-
-			cout<<"___"<<endl;
-			*/
-			//add neighbors to structure
-			if (currX+1 <img.width()){
-				//RIGHT
-				pixels.add(*(img(currX+1,currY)));
-				xcoords.add(currX+1);
-				ycoords.add(currY);
-			}
-
-			if (currY+1 <img.height()){
-				//DOWN
-				pixels.add(*(img(currX,currY+1)));
-				xcoords.add(currX);
-				ycoords.add(currY+1);
-			}
-
-			if (currX-1>= 0){
-				//LEFT
-				pixels.add(*(img(currX-1,currY)));
-				xcoords.add(currX-1);
-				ycoords.add(currY);
-			}
-
-			if (currY-1>= 0){
-				//DOWN
-				pixels.add(*(img(currX,currY-1)));
-				xcoords.add(currX);
-				ycoords.add(currY-1);
+			if(count == frameFreq){
+				res.addFrame(img);
+				count = 0;
 			}
 
 
-			//add frame to animation if frame count is divisible by framefreq
-			if (frameCount % frameFreq == 0){
-				//add the current image to the animation
-				myAnim.addFrame(img);
+			if((size_t)(xCoord) < img.width() - 1){
+				Xcoords.add(xCoord + 1);
+				Ycoords.add(yCoord);
+				sq.add(*img(xCoord + 1, yCoord));
+			}
+
+			if((size_t)yCoord < img.height() - 1){
+				Xcoords.add(xCoord);
+				Ycoords.add(yCoord + 1);
+				sq.add(*img(xCoord, yCoord + 1));
+			}
+
+			if(xCoord - 1 >= 0){
+				Xcoords.add(xCoord - 1);
+				Ycoords.add(yCoord);
+				sq.add(*img(xCoord - 1, yCoord));
+			}
+
+			if(yCoord - 1 >= 0){
+				Xcoords.add(xCoord);
+				Ycoords.add(yCoord - 1);
+				sq.add(*img(xCoord, yCoord - 1));
 			}
 		}
 	}
-	return myAnim;
-
+    return res;
 }
