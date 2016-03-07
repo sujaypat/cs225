@@ -1,8 +1,8 @@
-Grading r22805 by ptwrdhn2 committed on Sat Mar  5 19:50:38 CST 2016
+Grading r22834 by tolar2 committed on Sun Mar  6 01:19:05 CST 2016
 Monad Autograder
-Testing mp4 at 2016-03-06 00:55:34
+Testing mp4 at 2016-03-07 00:56:40
 
-"If you can't remember a formula during the exam it's probably not important." ~ Prof. Chengxiang Zhai
+"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. Code for readability." ~ John Woods
 
 Setting up test environment...
 Compiling...
