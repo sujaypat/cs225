@@ -1,8 +1,8 @@
-Grading r23361 by tolar2 committed on Wed Mar  9 01:22:10 CST 2016
+Grading r23724 by tolar2 committed on Thu Mar 10 01:24:43 CST 2016
 Monad Autograder
-Testing mp4 at 2016-03-10 00:59:18
+Testing mp4 at 2016-03-11 00:56:12
 
-"Who dares to teach must never cease to learn." ~ J.C. Dana
+"The slogan of Subversion for a while was "CVS done right", or something like that, and if you start with that kind of slogan, there's nowhere you can go. There is no way to do CVS right." ~ Linus Torvalds
 
 Setting up test environment...
 Compiling...
