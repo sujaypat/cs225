@@ -147,7 +147,7 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor, int toler
 	*        be filled every frame.
 	*/
 
-	OrderingStructure<RGBAPixel> sq;
+	OrderingStructure<RGBAPixel> pix;
 	OrderingStructure<int> Xcoords;
 	OrderingStructure<int> Ycoords;
 	int** processed = new int *[img.width()];
@@ -162,12 +162,12 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor, int toler
 	animation res; //animation to return
 
 	RGBAPixel starting = (*img(x,y));
-	sq.add(starting);
+	pix.add(starting);
 	Xcoords.add(x);
 	Ycoords.add(y);
 
-	while(!sq.isEmpty()){
-		RGBAPixel pixel = sq.remove();
+	while(!pix.isEmpty()){
+		RGBAPixel pixel = pix.remove();
 		int xCoord = Xcoords.remove();
 		int yCoord = Ycoords.remove();
 
@@ -194,25 +194,25 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor, int toler
 			if((size_t)(xCoord) < img.width() - 1){
 				Xcoords.add(xCoord + 1);
 				Ycoords.add(yCoord);
-				sq.add(*img(xCoord + 1, yCoord));
+				pix.add(*img(xCoord + 1, yCoord));
 			}
 
 			if((size_t)yCoord < img.height() - 1){
 				Xcoords.add(xCoord);
 				Ycoords.add(yCoord + 1);
-				sq.add(*img(xCoord, yCoord + 1));
+				pix.add(*img(xCoord, yCoord + 1));
 			}
 
 			if(xCoord - 1 >= 0){
 				Xcoords.add(xCoord - 1);
 				Ycoords.add(yCoord);
-				sq.add(*img(xCoord - 1, yCoord));
+				pix.add(*img(xCoord - 1, yCoord));
 			}
 
 			if(yCoord - 1 >= 0){
 				Xcoords.add(xCoord);
 				Ycoords.add(yCoord - 1);
-				sq.add(*img(xCoord, yCoord - 1));
+				pix.add(*img(xCoord, yCoord - 1));
 			}
 		}
 	}
