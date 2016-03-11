@@ -1,0 +1,8 @@
+TOTAL GRADE: 60.00/100.00
+             = 60*mc/8 + 40*code/10
+          where   mc = min(8,  10.00) = 8.00
+                code = min(10, 0) = 0
+
+Coding problems:
+(if you didn't submit anything, you won't get a report)
+
