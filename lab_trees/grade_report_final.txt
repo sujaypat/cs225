@@ -1,0 +1,23 @@
+Grading r24718 by ptwrdhn2 committed on Fri Mar 11 14:19:58 CST 2016
+Monad Autograder
+Testing lab_trees at 2016-03-14 00:16:18
+
+"I've seen many balls. Actually, let's do an example without balls." ~ Jack Toole
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_isOrdered  . [33 pts] - passed
+test_mirror . . . [33 pts] - passed
+test_printPaths . [34 pts] - passed
+test_sumDistances [25 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 125
+
