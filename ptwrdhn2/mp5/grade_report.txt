@@ -1,8 +1,8 @@
-Grading r28141 by tolar2 committed on Sat Mar 19 00:35:29 CDT 2016
+Grading r28253 by tolar2 committed on Sun Mar 20 00:51:20 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-20 00:35:59
+Testing mp5 at 2016-03-21 00:38:06
 
-"Doing more things faster is no substitute for doing the right things." ~ Stephen R. Covey
+"Wat." ~ Chase Geigle
 
 Setting up test environment...
 Compiling...
