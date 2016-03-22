@@ -1,8 +1,8 @@
-Grading r28253 by tolar2 committed on Sun Mar 20 00:51:20 CDT 2016
+Grading r28594 by ptwrdhn2 committed on Mon Mar 21 23:39:27 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-21 00:38:06
+Testing mp5 at 2016-03-22 00:38:42
 
-"Wat." ~ Chase Geigle
+"We don't have time to stop for gas, we're already late." ~ Mike Cleron
 
 Setting up test environment...
 Compiling...
@@ -53,9 +53,9 @@ test_pruneSize_3 . . . . . [2 pts] - passed
 test_pruneSize_4 . . . . . [2 pts] - passed
 test_pruneSize_5 . . . . . [2 pts] - passed
 test_idealPrune_1  . . . . [2 pts] - passed
-test_idealPrune_2  . . . . [3 pts] - FAILED
+test_idealPrune_2  . . . . [3 pts] - passed
 test_idealPrune_3  . . . . [2 pts] - passed
-test_idealPrune_4  . . . . [5 pts] - FAILED
+test_idealPrune_4  . . . . [5 pts] - passed
 val_clockwiseRotate (asan) [2 pts] - passed
 val_prune (asan) . . . . . [4 pts] - passed
 val_idealPrune (asan)  . . [3 pts] - passed
@@ -64,5 +64,5 @@ test_const_correctness . . [4 pts] - passed
 
 Total score...
 ================================================================
-TOTAL SCORE: 87
+TOTAL SCORE: 95
 
