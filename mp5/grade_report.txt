@@ -1,8 +1,8 @@
-Grading r28594 by ptwrdhn2 committed on Mon Mar 21 23:39:27 CDT 2016
+Grading r28606 by tolar2 committed on Tue Mar 22 00:52:56 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-22 00:38:42
+Testing mp5 at 2016-03-23 00:37:28
 
-"We don't have time to stop for gas, we're already late." ~ Mike Cleron
+"Microsoft has a new version out, Windows XP, which according to everybody is the 'most reliable Windows ever.' To me, this is like saying that asparagus is 'the most articulate vegetable ever.'" ~ Dave Barry
 
 Setting up test environment...
 Compiling...
