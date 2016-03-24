@@ -1,8 +1,8 @@
-Grading r28606 by tolar2 committed on Tue Mar 22 00:52:56 CDT 2016
+Grading r28783 by tolar2 committed on Wed Mar 23 00:51:45 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-23 00:37:28
+Testing mp5 at 2016-03-24 00:37:39
 
-"Microsoft has a new version out, Windows XP, which according to everybody is the 'most reliable Windows ever.' To me, this is like saying that asparagus is 'the most articulate vegetable ever.'" ~ Dave Barry
+"Anti-intellectualism has been a constant thread winding its way through our political and cultural life, nurtured by the false notion that democracy means that 'my ignorance is just as good as your knowledge.'" ~ Isaac Asimov
 
 Setting up test environment...
 Compiling...
