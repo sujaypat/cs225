@@ -1,8 +1,8 @@
-Grading r29008 by tolar2 committed on Thu Mar 24 00:52:45 CDT 2016
+Grading r29278 by tolar2 committed on Fri Mar 25 00:50:08 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-25 00:35:31
+Testing mp5 at 2016-03-26 00:35:31
 
-"This is 5 probability." ~ Jack Toole
+"Any sufficiently advanced bug is indistinguishable from a feature." ~ Rich Kulawiec
 
 Setting up test environment...
 Compiling...
