@@ -1,8 +1,8 @@
-Grading r29278 by tolar2 committed on Fri Mar 25 00:50:08 CDT 2016
+Grading r29568 by tolar2 committed on Sat Mar 26 00:49:46 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-03-26 00:35:31
+Testing mp5 at 2016-03-27 00:41:23
 
-"Any sufficiently advanced bug is indistinguishable from a feature." ~ Rich Kulawiec
+"Work's best done when the deadline is closer." ~ Chaitanya Datye
 
 Setting up test environment...
 Compiling...
