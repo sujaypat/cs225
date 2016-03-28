@@ -1,0 +1,253 @@
+Exam 2 Multiple Choice Questions
+
+- These questions may not be in the same order as what you saw on the exam.
+- Your answer is indicated by a '->'
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider the following class definitions:
+
+    class Season{
+        public:
+            virtual void adjustTemp(int change);
+        private:
+            int temp;
+    };
+
+    class Winter: public Season {
+        public:
+            void makeColder(int change);
+    };
+
+Where could the assignment `temp += change;` appear for the private
+variable `temp`?
+
+Choices:
+   a. The answer to this question cannot be determined from the given code.
+   b. Both `adjustTemp` and `makeColder` can make the assignment.
+   c. `makeColder` can make the assignment, but `adjustTemp` cannot.
+-> d. `adjustTemp` can make the assignment, but `makeColder` cannot.
+   e. Neither `makeColder` nor `adjustTemp` can make the assignment.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+What will be the output of the following program?
+
+    class Base
+    {
+        public:
+            ~Base() {cout << "Destructing Base"; }
+    };
+
+    class Derived:public Base
+    {
+        public:
+            ~Derived() { cout<< "Destructing Derived"; }
+    }; 
+
+    int main()
+    {
+        Base* b = new Derived;     
+        delete b;
+    }
+
+Choices:
+   a. `"Destructing BaseDestructing Derived"`
+   b. Compiler error
+-> c. `"Destructing Derived"`
+   d. None of the above
+   e. `"Destructing Base"`
+Your answer was incorrect.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using the templatized `MyPair` class defined in lecture, and the
+standard `string` class, which of the following correctly declares a
+variable called `closet` which is a dynamic array of `MyPairs` whose
+parameterized type is a `string`?
+
+Choices:
+   a. ```
+      MyPair * closet = new string[size]
+      ```
+   b. ```
+      MyPair<string *> closet;
+      ```
+   c. More than one of the other options are correct.
+   d. None of the other options is correct.
+-> e. ```
+      MyPair<string> * closet;
+      ```
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In implementing Queue ADT, using which of the following data structure
+gives best asymptotic runtime for `enqueue`? (Assume we require to
+enqueue at the end of the list or array)
+
+Choices:
+   a. Doubly linked list with head and tail pointer only
+   b. Doubly linked list with head pointer only
+   c. Singly linked list with head and tail pointer
+   d. Singly linked list with head pointer only
+   e. None of the other options are correct
+-> f. Exactly two of the other options are correct
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Suppose a `std::stack<int> s` contains 6 elements `1, 2, 3, 4, 5, 6`
+(pushed in that order). What is the result of executing the following
+code snippet, assuming all required libraries are included?
+
+    for(int i = 0; i<6; i++){
+        if(i%2==1) {
+            s.push(s.top());
+            s.pop();
+        }
+    }
+
+Choices:
+   a. The odd numbers in `s` are reversed.
+   b. The elements `s` are reversed.
+-> c. `s` remains the same.
+   d. The top half of `s` contains even elements and the bottom half of `s`
+      contains odd elements.
+   e. The even numbers in `s` are reversed.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider this simple example.
+
+    int * a;
+    int * b;
+    a = new int(5);
+    b = a;
+    cout << *b << endl;
+    delete a; 
+    a = NULL; 
+    b = NULL;
+
+What is the result of executing these statements if you assume the
+standard `iostream` library has been included?
+
+Choices:
+-> a. `5` is sent to standard out.
+   b. This code has a memory leak.
+   c. The memory address of `b` is sent to standard out.
+   d. None of the other options describes the behavior of this code.
+   e. This code does not compile.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider this simple example
+
+    #include <iostream>
+    using namespace std;
+
+    class winterfell {
+    public:
+       winterfell(const string & s ): text(s) {};
+       char & operator()(int position) { return text[position];}
+    private:
+        string text;
+    };
+
+    int main() {
+       winterfell t("Winter Is Coming!");
+       for(int i = 0; i < 17; i++)
+            // your code here!
+       return 0;
+    }
+
+Which of the following statements complete the code so that the output
+is `"Winter Is Coming!"`?
+
+Choices:
+   a. `cout << text[i];`
+   b. `cout << t;`
+-> c. `cout << t(i);`
+   d. `cout << t[i];`
+   e. More than one of the other options is correct.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is the total tightest worst case running time of dequeueing $n$
+distinct elements from a queue that is implemented using 2 stacks, if no
+other operations are performed?
+
+Choices:
+   a. $O(\log n)$
+-> b. $O(n)$
+   c. $O(n \log n)$
+   d. $O(n^2)$
+   e. None of the above
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+We have implemented the Stack ADT as an array. Every time the array is
+full, you resize the array creating a new array that can hold ten more
+elements than the previous array and copy values over from the old
+array. What is the total running time for $n$ pushes to the stack.
+
+Choices:
+   a. $O(n^2)$.
+   b. $O(n \log n)$.
+   c. $O(1)$.
+-> d. $O(n)$.
+   e. $O(\log n)$.
+Your answer was incorrect.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a double linked list of size $n$,you are given the address of the
+last node. What will be the time required to access the data stored in
+the second last node?
+
+Choices:
+   a. $O(n)$
+   b. $O(\log n)$
+   c. $O(\log\log n)$
+   d. It cannot be accessed
+-> e. $O(1)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Give the tightest running time for a function with declaration as
+follows:
+
+    InsertItem(item * newItem, item * afterItem)
+
+`newItem` is the item that you are trying to insert in the list.  
+`afterItem` is the item after which you want to insert the `newItem`
+
+Choices:
+   a. $O(\log n)$
+   b. $O(\log\log n)$
+   c. $O(n \log n)$
+   d. $O(n)$
+-> e. $O(1)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a sorted doubly linked list of size $n^2$, time taken to calculate
+the sum of all elements in the list is
+
+Choices:
+   a. $O(n \log n)$.
+-> b. $O(n^2)$.
+   c. $O(1)$.
+   d. $O(\log n)$.
+   e. $O(n)$.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
