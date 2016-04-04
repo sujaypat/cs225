@@ -1,8 +1,8 @@
-Grading r32133 by tolar2 committed on Sat Apr  2 00:54:23 CDT 2016
+Grading r32415 by tolar2 committed on Sun Apr  3 00:59:21 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-04-03 00:43:10
+Testing mp5 at 2016-04-04 00:43:47
 
-"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+"Now let me erase this before you all copy it down." ~ Alexey Stepanov
 
 Setting up test environment...
 Compiling...
