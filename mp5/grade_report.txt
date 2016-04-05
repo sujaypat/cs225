@@ -1,8 +1,8 @@
-Grading r32415 by tolar2 committed on Sun Apr  3 00:59:21 CDT 2016
+Grading r33507 by tolar2 committed on Mon Apr  4 00:59:54 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-04-04 00:43:47
+Testing mp5 at 2016-04-05 00:46:07
 
-"Now let me erase this before you all copy it down." ~ Alexey Stepanov
+"A computer will do what you tell it to do, but that may be much different from what you had in mind" ~ Joseph Weizenbaum
 
 Setting up test environment...
 Compiling...
