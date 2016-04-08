@@ -1,0 +1,191 @@
+Exam 3 Multiple Choice Questions
+
+- These questions may not be in the same order as what you saw on the exam.
+- Your answer is indicated by a '->'
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Objects of type iterator promise to implement each of the following
+except:
+
+Choices:
+-> a. `operator*`
+   b. `operator+`
+   c. `operator=`
+   d. All of these are implemented in an iterator.
+   e. `operator==`
+Your answer was incorrect.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider the following code:
+
+    #include <iostream>
+    using namespace std;
+
+    class dunno
+    {
+        public:
+
+        float operator()(float f){
+            return f>0 ? f : -f;
+        }
+    };
+
+    void main()
+    {
+        float f = -123.45;
+        dunno aObj;
+        // replace this line
+        cout << "f = " << f << " something_f = " << something_f << endl;
+    }
+
+Replace line 17 in the above code so that the above code compiles:
+
+Choices:
+-> a. `float something_f = aObj(f);`
+   b. `float* something_f = f->aObj();`
+   c. `float something_f = f.aObj();`
+   d. `float something_f = aObj<float>(f);`
+   e. None of these is appropriate.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fill in the blanks so that the following sentence is true: If you have a
+complete tree with 17 nodes, the maximum height ($h$) of the tree is
+\_\_\_\_\_\_ and there are \_\_\_\_\_\_ nodes on level $h$.
+
+Choices:
+   a. First blank is 8, second is 2.
+   b. First blank is 5, second is 2.
+   c. First blank is 8, second is 9.
+-> d. None of the other options makes the sentence true.
+   e. First blank is 4, second is 1.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Which of the following could not be a path in a binary search tree?
+
+Choices:
+   a. `128, 735, 209, 245, 223`
+   b. None of the options is correct.
+-> c. `995, 353, 254, 498, 223`
+   d. `492, 125, 418, 197, 223`
+   e. `15, 982, 178, 645, 207, 517, 208, 223`
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Consider the AVL Tree built by inserting the following sequence of
+integers, one at a time:
+
+    5, 8, 9, 7, 6, 3
+
+What is the element in root node?
+
+Choices:
+   a. 5
+   b. 7
+   c. 8
+   d. None of these answers is correct.
+-> e. 6.
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Which of the following is not a Dictionary data structure? (do not worry
+about the efficiency)
+
+Choices:
+   a. All of these are dictionaries
+   b. AVL tree
+-> c. Binary Search Tree
+   d. B-Tree
+   e. Hash Table
+Your answer was incorrect.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose the appropriate running time from the list below.
+
+The variable $n$ represents the number of items (keys, data, or key/data
+pairs) in the structure. In answering this question you should assume
+the best possible implementation given the constraints, and also assume
+that every array is sufficiently large to handle all items (unless
+otherwise stated).
+
+Perform a level order traversal of a BST.
+
+Choices:
+-> a. $O(n)$
+   b. $O(n^2)$
+   c. $O(n\log n)$
+   d. $O(1)$
+   e. $O(\log n)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose the appropriate running time from the list below.
+
+The variable $n$ represents the number of items (keys, data, or key/data
+pairs) in the structure. In answering this question you should assume
+the best possible implementation given the constraints, and also assume
+that every array is sufficiently large to handle all items (unless
+otherwise stated).
+
+Insert a key into a Binary Search Tree (not necessarily AVL)
+
+Choices:
+   a. $O(1)$
+   b. $O(\log n)$
+   c. $O(n\log n)$
+-> d. $O(n)$
+   e. $O(n^2)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose the appropriate running time from the list below.
+
+The variable $n$ represents the number of items (keys, data, or key/data
+pairs) in the structure. In answering this question you should assume
+the best possible implementation given the constraints, and also assume
+that every array is sufficiently large to handle all items (unless
+otherwise stated).
+
+Remove a single key from a height balanced Binary Search Tree.
+
+Choices:
+   a. $O(n^2)$
+   b. $O(n)$
+-> c. $O(\log n)$
+   d. $O(1)$
+   e. $O(n\log n)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Choose the appropriate running time from the list below.
+
+The variable $n$ represents the number of items (keys, data, or key/data
+pairs) in the structure. In answering this question you should assume
+the best possible implementation given the constraints, and also assume
+that every array is sufficiently large to handle all items (unless
+otherwise stated).
+
+Build an AVL tree with keys that are the numbers between $n$ and $0$, in
+that order, by repeated insertions into the tree.
+
+Choices:
+   a. $O(n)$
+-> b. $O(n\log n)$
+   c. $O(n^2)$
+   d. $O(\log n)$
+   e. $O(1)$
+Your answer was correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+
