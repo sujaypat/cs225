@@ -1,0 +1,174 @@
+################################
+##                            ##
+##     Grading question 9     ##
+##                            ##
+################################
+> :: Compiling...
+> g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o binarytree_q9.o binarytree_q9.cpp
+> :: Compiled successfully!
+> :: Trying to compile binarytree_q10.cpp...
+> g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o binarytree_q10.o binarytree_q10.cpp
+> binarytree_q10.cpp:3: warning: unused parameter 'goal'
+> :: Compiling provided code...
+> 
+> :: Compiling test_empty.
+> :: Running test_empty.
+> Summing nodes in:
+> (empty)
+> Result: 0
+> Expected: 0
+> :: Passed test_empty.
+> 
+> :: Compiling test_single.
+> :: Running test_single.
+> Summing nodes in:
+>  1
+> Result: 1
+> Expected: 1
+> :: Passed test_single.
+> 
+> :: Compiling test_neg_single.
+> :: Running test_neg_single.
+> Summing nodes in:
+>  -1
+> Result: -1
+> Expected: -1
+> :: Passed test_neg_single.
+> 
+> :: Compiling test_multi.
+> :: Running test_multi.
+> Summing nodes in:
+>                         ______ 5 ______
+>                  ______/               \______
+>             __ 3 __                         __ 8 __
+>          __/       \__                   __/       \__
+>        2               4               7               9
+>      /                               /                   \
+>    1                               6                       10
+>   /
+>  0
+> Result: 55
+> Expected: 55
+> :: Passed test_multi.
+> 
+> :: Compiling test_neg_multi.
+> :: Running test_neg_multi.
+> Summing nodes in:
+>                                   ______________ 5 ______________
+>                    ______________/                               \______________
+>           ______ -3 _____                                                 ______ 9 ______
+>    ______/               \______                                   ______/               \______
+>  -4                              -2 _                         __ 7 __                            10
+>                                      \__                   __/       \__
+>                                          3               6               8
+>                                        /   \
+>                                      1       4
+>                                     /
+>                                    0
+> Result: 44
+> Expected: 44
+> :: Passed test_neg_multi.
+Grade for question 9: 100/100
+
+#################################
+##                             ##
+##     Grading question 10     ##
+##                             ##
+#################################
+> :: Compiling...
+> g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o binarytree_q10.o binarytree_q10.cpp
+> binarytree_q10.cpp:3: warning: unused parameter 'goal'
+> :: Compiled successfully!
+> :: Trying to compile binarytree_q9.cpp...
+> g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o binarytree_q9.o binarytree_q9.cpp
+> :: Compiling provided code...
+> 
+> :: Compiling test_empty.
+> :: Running test_empty.
+> Finding paths with goal 25 in:
+> (empty)
+> Results:  (empty)
+> Expected: (empty)
+> :: Passed test_empty.
+> 
+> :: Compiling test_big_root.
+> :: Running test_big_root.
+> Finding paths with goal 25 in:
+> 100
+> Results:  (empty)
+> Expected: (empty)
+> :: Passed test_big_root.
+> 
+> :: Compiling test_only_root.
+> :: Running test_only_root.
+> Finding paths with goal 25 in:
+>  25
+> Results:  (empty)
+> Expected: 25
+> :: Failed test_only_root.
+> 
+> :: Compiling test_all_smaller.
+> :: Running test_all_smaller.
+> Finding paths with goal 25 in:
+>        4
+>      /   \
+>    2       6
+>   / \     / \
+>  1   3   5   7
+> Results:  (empty)
+> Expected: (empty)
+> :: Passed test_all_smaller.
+> 
+> :: Compiling test_all_larger.
+> :: Running test_all_larger.
+> Finding paths with goal 25 in:
+>        17
+>      /   \
+>    10      22
+>   / \     / \
+>  8   11  19  25
+> Results:  (empty)
+> Expected: (empty)
+> :: Passed test_all_larger.
+> 
+> :: Compiling test_two_paths.
+> :: Running test_two_paths.
+> Finding paths with goal 25 in:
+>                   ______________ 10 _____________
+>    ______________/                               \______________
+>  1 ______                                                        15
+>          \______
+>                  2 __
+>                      \__
+>                          3
+>                            \
+>                              4
+>                               \
+>                                5
+> Results:  (empty)
+> Expected: 
+>  - 10 -> 15
+>  - 10 -> 1 -> 2 -> 3 -> 4 -> 5
+> :: Failed test_two_paths.
+> 
+> :: Compiling test_non_leaf.
+> :: Running test_non_leaf.
+> Finding paths with goal 25 in:
+>                   ______________ 10 _____________
+>    ______________/                               \______________
+>  1 ______                                                        15 _____
+>          \______                                                         \______
+>                  2 __                                                            20
+>                      \__
+>                          3
+>                            \
+>                              4
+>                               \
+>                                5
+> Results:  (empty)
+> Expected: 10 -> 1 -> 2 -> 3 -> 4 -> 5
+> :: Failed test_non_leaf.
+Grade for question 10: 62.5/100
+
+
+Total score: 100*0.14 + 62.5*0.06 = 17.75/20
