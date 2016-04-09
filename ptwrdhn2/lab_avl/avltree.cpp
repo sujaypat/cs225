@@ -116,7 +116,7 @@ void AVLTree<K, V>::insert(Node*& subtree, const K& key, const V& value){
 		insert(subtree->right, key, value);
 	}
 	rebalance(subtree);
-	subtree->height= max(heightOrNeg1(subtree->left),heightOrNeg1(subtree->right))+1;
+	subtree->height = max(heightOrNeg1(subtree->left),heightOrNeg1(subtree->right))+1;
 }
 
 template <class K, class V>
