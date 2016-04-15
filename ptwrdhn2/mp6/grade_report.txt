@@ -1,8 +1,8 @@
-Grading r38314 by tolar2 committed on Wed Apr 13 00:27:37 CDT 2016
+Grading r38472 by tolar2 committed on Thu Apr 14 00:27:45 CDT 2016
 Monad Autograder
-Testing mp6 at 2016-04-14 00:21:58
+Testing mp6 at 2016-04-15 00:24:01
 
-"It is practically impossible to teach good programming to students that have had a prior exposure to BASIC: as potential programmers they are mentally mutilated beyond hope of regeneration." ~ Edsger Dijkstra
+"Don't beg. Earn it. Then it will be granted to you." ~ Adroc Thurston
 
 Setting up test environment...
 Compiling...
