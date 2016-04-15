@@ -22,8 +22,7 @@ using std::endl;
  */
 template <template <class K, class V> class Dict>
 AnagramFinder<Dict>::AnagramFinder(const string& ifilename)
-    : file(true), filename(ifilename)
-{
+    : file(true), filename(ifilename){
     /* nothing */
 }
 
@@ -35,8 +34,7 @@ AnagramFinder<Dict>::AnagramFinder(const string& ifilename)
  */
 template <template <class K, class V> class Dict>
 AnagramFinder<Dict>::AnagramFinder(const vector<string>& istrings)
-    : file(false), strings(istrings)
-{
+    : file(false), strings(istrings){
     /* nothing */
 }
 
@@ -48,17 +46,35 @@ AnagramFinder<Dict>::AnagramFinder(const vector<string>& istrings)
  * @return A boolean value indicating whether word is an anagram of test.
  */
 template <template <class K, class V> class Dict>
-bool AnagramFinder<Dict>::checkWord(const string& word, const string& test)
-{
+bool AnagramFinder<Dict>::checkWord(const string& word, const string& test){
     /**
      * @todo Implement this function! You should use the provided
      * templated hashtable class Dict.
      */
 
-    (void) word; // prevent warnings... When you implement this function, remove this line.
-    (void) test; // prevent warnings... When you implement this function, remove this line.
+	 if (word.length() != test.length())
+        return false;
 
+    Dict<char, int>wordHash(256);
+    for(size_t i = 0; i < word.length(); i++){
+        wordHash[word[i]]++;
+    }
+    Dict<char, int>testHash(256);
+    for (size_t i = 0; i < test.length(); i++){
+        testHash[test[i]]++;
+    }
+    typename Dict<char, int>::iterator wit = wordHash.begin();
+    typename Dict<char, int>::iterator tit = testHash.begin();
+    for (size_t i = 0; i < 256; i++){
+        if (testHash[i] != wordHash[i])
+            return false;
+    }
     return true;
+
+    // (void) word; // prevent warnings... When you implement this function, remove this line.
+    // (void) test; // prevent warnings... When you implement this function, remove this line.
+
+    // return true;
 }
 
 /**
@@ -67,8 +83,7 @@ bool AnagramFinder<Dict>::checkWord(const string& word, const string& test)
  * @param word The word we wish to find anagrams of inside the finder.
  */
 template <template <class K, class V> class Dict>
-vector<string> AnagramFinder<Dict>::getAnagrams(const string& word)
-{
+vector<string> AnagramFinder<Dict>::getAnagrams(const string& word){
     // set up the return vector
     vector<string> ret;
 
@@ -99,8 +114,7 @@ vector<string> AnagramFinder<Dict>::getAnagrams(const string& word)
  */
 template <template <class K, class V> class Dict>
 void AnagramFinder<Dict>::writeAnagrams(const string& word,
-                                        const string& output_file)
-{
+                                        const string& output_file){
     vector<string> anagrams = getAnagrams(word);
     ofstream outfile(output_file.c_str());
     if (outfile.is_open()) {
