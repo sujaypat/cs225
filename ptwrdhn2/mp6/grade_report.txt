@@ -1,8 +1,8 @@
-Grading r38847 by tolar2 committed on Fri Apr 15 00:30:05 CDT 2016
+Grading r39193 by tolar2 committed on Sat Apr 16 01:27:39 CDT 2016
 Monad Autograder
-Testing mp6 at 2016-04-16 01:21:33
+Testing mp6 at 2016-04-17 00:22:03
 
-"You know what they say... Pythagoras's Theorem doesn't take into account road construction." ~ Tom Bogue
+"Don't worry about people stealing your ideas. If your ideas are any good, you'll have to ram them down people's throats." ~ Howard H. Aiken
 
 Setting up test environment...
 Compiling...
