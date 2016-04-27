@@ -1,0 +1,24 @@
+Grading r43272 by ptwrdhn2 committed on Tue Apr 26 20:00:34 CDT 2016
+Monad Autograder
+Testing mp7.1 at 2016-04-27 00:22:17
+
+"Any sufficiently advanced bug is indistinguishable from a feature." ~ Rich Kulawiec
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1 . . . . [20 pts] - passed
+addElements2 . . . . [20 pts] - passed
+testFindAndSetUnion1 [20 pts] - passed
+testFindAndSetUnion2 [20 pts] - passed
+testFindAndSetUnion3 [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+
