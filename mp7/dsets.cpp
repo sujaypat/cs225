@@ -3,15 +3,17 @@
 #include "dsets.h"
 
 void DisjointSets::addelements(int num){
-    for (int i = 0; i < num; i++){
-        lmao.push_back(-1);
-    }
+	for (int i = 0; i < num; i++){
+		lmao.push_back(-1);
+	}
 }
 
 int DisjointSets::find(int elem){
 	if(lmao[elem] < 0) return elem;
-	lmao[elem] = find(lmao[elem]);
-	return lmao[elem];
+	else{
+		lmao[elem] = find(lmao[elem]);
+		return lmao[elem];
+	}
 }
 
 void DisjointSets::setunion(int a, int b){
