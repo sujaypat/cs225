@@ -1,8 +1,8 @@
-Grading r44316 by tolar2 committed on Sat Apr 30 01:03:50 CDT 2016
+Grading r44768 by tolar2 committed on Sun May  1 01:07:33 CDT 2016
 Monad Autograder
-Testing mp7 at 2016-05-01 00:48:12
+Testing mp7 at 2016-05-02 01:01:29
 
-"Simplicity is the ultimate sophistication." ~ Leonardo da Vinci
+"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
 
 Setting up test environment...
 Compiling...
