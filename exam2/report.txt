@@ -1,7 +1,10 @@
-TOTAL GRADE: 60.00/100.00
+TOTAL GRADE: 100.00/100.00
              = 60*mc/8 + 40*code/10
           where   mc = min(8,  10.00) = 8.00
-                code = min(10, 0) = 0
+                code = min(10, 10.00) = 10.00
+
+REGRADE for coding 1: 0.00 -> 10.00
+(these are not indicated below, but they are used in the calculations above)
 
 Coding problems:
 (if you didn't submit anything, you won't get a report)
