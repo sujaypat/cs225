@@ -1,8 +1,8 @@
-Grading r44768 by tolar2 committed on Sun May  1 01:07:33 CDT 2016
+Grading r45825 by tolar2 committed on Mon May  2 01:20:37 CDT 2016
 Monad Autograder
-Testing mp7 at 2016-05-02 01:01:29
+Testing mp7 at 2016-05-03 00:47:56
 
-"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
+"A lot of the things that I say are true, but I don't actually mean them." ~ Alexey Stepanov
 
 Setting up test environment...
 Compiling...
