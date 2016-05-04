@@ -16,27 +16,10 @@ class SquareMaze {
 		SquareMaze();
 		void makeMaze(int width, int height);
 		bool canTravel(int x, int y, int dir) const;
-		void setWall (int x, int y, int dir, bool exist);
+		void setWall (int x, int y, int dir, bool exists);
 		vector <int> solveMaze();
 		PNG * drawMaze() const;
 		PNG * drawMazeWithSolution();
-
-
-	private:
-		int mazeWidth;
-		int mazeHeight;
-		int size;
-		int exitCell;
-		vector <int> solution;
-		DisjointSets cells;
-		vector< pair< pair<int, int>, int > >  walls;
-		vector<bool> rightWalls;
-		vector<bool> downWalls;
-
-		int getCellIndex(int x, int y) const;
-		int getCellX( int cellID);
-		int getCellY( int cellID);
-		int getNextCell( int x, int y, int dir );
 
 };
 
