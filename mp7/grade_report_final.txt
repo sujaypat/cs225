@@ -1,0 +1,149 @@
+Grading r47567 by ptwrdhn2 committed on Tue May  3 23:28:51 CDT 2016
+Monad Autograder
+Testing mp7 at 2016-05-04 00:54:37
+
+"If you just rely on one model, you tend to amputate reality to make it fit your model." ~ David Brooks
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1  . . . . . . [5 pts] - passed
+addElements2  . . . . . . [5 pts] - passed
+testFindAndSetUnion1  . . [5 pts] - passed
+testFindAndSetUnion2  . . [5 pts] - passed
+testFindAndSetUnion3  . . [5 pts] - passed
+testMakeSmallMaze . . . . [5 pts] - FAILED: unit_tests.cpp:199: Maze has a cycle
+testMakeMazeConnected . . [5 pts] - passed
+testMakeMazeAcyclic . . . [5 pts] - FAILED: unit_tests.cpp:181: Maze has a cycle
+testMakeMazeTree1000  . . [5 pts] - FAILED: unit_tests.cpp:199: Maze has a cycle
+testMakeMazeRandom  . . . [5 pts] - FAILED: unit_tests.cpp:323: Generated the same 50x50 maze twice
+testSolveMazeValidPath  . [5 pts] - FAILED: unit_tests.cpp:337: No solution was generated
+testSolutionBottomRow . . [5 pts] - FAILED: unit_tests.cpp:365: Didn't end up at the bottom row
+testSolutionCorrectSquare [5 pts] - FAILED: unit_tests.cpp:384: Didn't end up at the bottom row
+testSolveMazeSmall  . . . [5 pts] - FAILED: unit_tests.cpp:404: [solution.size() => 0] != [soln.getSolutionSize() => 3]
+testSolveMazeLarge  . . . [5 pts] - FAILED: unit_tests.cpp:404: [solution.size() => 0] != [soln.getSolutionSize() => 6768]
+testDrawMazeSmall . . . . [5 pts] - FAILED: unit_tests.cpp:424: Assertion (*actualOutput == solnImage) failed
+testDrawMazeMed . . . . . [5 pts] - FAILED: unit_tests.cpp:438: Assertion (*actualOutput == solnImage) failed
+testDrawMazeLarge . . . . [5 pts] - FAILED: unit_tests.cpp:452: Assertion (*actualOutput == solnImage) failed
+testDrawSolutionMed . . . [5 pts] - FAILED: unit_tests.cpp:467: Assertion (*actualOutput == solnImage) failed
+testDrawSolutionLarge . . [5 pts] - FAILED: unit_tests.cpp:482: Assertion (*actualOutput == solnImage) failed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 30
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testMakeSmallMaze [5 points]
+Result: FAILED: unit_tests.cpp:199: Maze has a cycle
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testMakeMazeAcyclic [5 points]
+Result: FAILED: unit_tests.cpp:181: Maze has a cycle
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testMakeMazeTree1000 [5 points]
+Result: FAILED: unit_tests.cpp:199: Maze has a cycle
+Took 630ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testMakeMazeRandom [5 points]
+Result: FAILED: unit_tests.cpp:323: Generated the same 50x50 maze twice
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeValidPath [5 points]
+Result: FAILED: unit_tests.cpp:337: No solution was generated
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionBottomRow [5 points]
+Result: FAILED: unit_tests.cpp:365: Didn't end up at the bottom row
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolutionCorrectSquare [5 points]
+Result: FAILED: unit_tests.cpp:384: Didn't end up at the bottom row
+Took 1ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testSolveMazeSmall [5 points]
+Result: FAILED: unit_tests.cpp:404: [solution.size() => 0] != [soln.getSolutionSize() => 3]
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+first 10 steps in solution:
+
+----------------------------------------------------------------
+testSolveMazeLarge [5 points]
+Result: FAILED: unit_tests.cpp:404: [solution.size() => 0] != [soln.getSolutionSize() => 6768]
+Took 2383ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+first 10 steps in solution:
+
+----------------------------------------------------------------
+testDrawMazeSmall [5 points]
+Result: FAILED: unit_tests.cpp:424: Assertion (*actualOutput == solnImage) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawMazeMed [5 points]
+Result: FAILED: unit_tests.cpp:438: Assertion (*actualOutput == solnImage) failed
+Took 12ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawMazeLarge [5 points]
+Result: FAILED: unit_tests.cpp:452: Assertion (*actualOutput == solnImage) failed
+Took 1163ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawSolutionMed [5 points]
+Result: FAILED: unit_tests.cpp:467: Assertion (*actualOutput == solnImage) failed
+Took 12ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDrawSolutionLarge [5 points]
+Result: FAILED: unit_tests.cpp:482: Assertion (*actualOutput == solnImage) failed
+Took 1213ms (15000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 30
+
